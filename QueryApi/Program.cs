@@ -11,6 +11,15 @@ namespace QueryApi
 {
     public class Program
     {
+        //Universidad Tecnologica Metropolitana
+        //Aplicaciones Web orientada a Servicios
+        //Joel Chuc
+        //Christian Jesus Balam Rosas
+        //4to Cuatrimestre
+        //Grupo C
+        //Parcial 2
+
+
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
