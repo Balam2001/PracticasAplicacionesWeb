@@ -29,14 +29,15 @@ namespace QueryApi.Repositories
             }
         }
 
-        // retornar todos los valores
+        // Escribe un método en el cual se retorne la información de todas las personas.
         public IEnumerable<Person> GetAll()
         {
             var query = _persons.Select(person => person);
             return query;
         }
 
-        // retornar campos especificos
+        
+        // Escribe un método en el cual se retorne únicamente el nombre completo de las personas, el correo y el año de nacimiento.
         public IEnumerable<Object> GetFields()
         {
             var query =_persons.Select(person => new{
@@ -46,162 +47,96 @@ namespace QueryApi.Repositories
             });
             return query;
         }
-
-        // retornar elementos que sean iguales
-        public IEnumerable<Person> GetById()
+        //Escribe un método que retorne la información de todas las personas cuyo genero sea Femenino.
+        public IEnumerable <Person> GetByGender(char Gender)
         {
-            var generador = new Random(DateTime.Now.Millisecond);
-            var id = generador.Next(1000);
-
-            var query= _persons.Where(p => p.Id ==id);
-            return query;
-        }
-
-        public IEnumerable <Person> GetByGender()
-        {
-            var gender ='F';
-            var query= _persons.Where(person => person.Gender == gender);
+                var query= _persons.Where(p => p.Gender == Gender);
             return query; 
-
         }
         
-        // Retornar elementos que sean diferentes
-        //public IEnumerable<string> GetJobs()
-        //{
-       //     var query = _persons.Select(person => person.Job).Distinct();
-       //     return query;
-       // }
-
-        public IEnumerable<string> GetDistinctJobs()
-        {
-            var job = "Structural Engineer";
-            var query = _persons.Where(p => p.Job != job).Select(p => p.Job).Distinct();
-            return query;
-        }
+        // Escribe un método que retorne la información de todas las personas cuya edad se encuentre entre los 20 y 30 años.
         
-        // retornar valores que contengan
-        public IEnumerable<Person> GetStartsWith()
+        public IEnumerable<Person> GetRange(int minAge, int maxAge)
         {
-            var word = "Sales";
-            var query = _persons.Where(p => p.Job.StartsWith(word));
-            return query;
-        }
-
-
-         public IEnumerable<Person> GetEndstWith()
-        {
-            var word = "III";
-            var query = _persons.Where(p => p.Job.EndsWith(word));
-            return query;
-        }
-
-         public IEnumerable<Person> GetContains()
-        {
-            var word = "Designer";
-            var query = _persons.Where(p => p.Job.Contains(word));
-            return query;
-        }
-
-        public IEnumerable<Person> GetPeople()
-        {
-            var ages = new List <int>{25,35,45};
-            var query = _persons.Where(p => ages.Contains(p.Age));
-            return query;
-        }
-        // retornar valores entre un rango
-        
-        public IEnumerable<Person> GetRange()
-        {
-            var minAge=20;
-            var maxAge=29;
-
             var query= _persons.Where(p => p.Age >= minAge && p.Age <= maxAge);
             return query;
         }
-        // retornar elementos ordenados
+        // Escribe un método que retorne la información de los diferentes trabajos que tienen las personas
+        public IEnumerable<string> GetJobs()
+        {
+            var query = _persons.Select(p => p.Job).Distinct();
+            return query;
+        }
+
+        //Escribe un método que retorne la información de las personas cuyo nombre contenga la palabra “ar”
+        public IEnumerable<Person> GetContains(string word)
+        {
+            var query = _persons.Where(p => p.FirstName.Contains(word));
+            return query;
+        }
+
+        //Escribe un método que retorna la información de las personas cuyas edades sean 25, 35 y 45 años
+        public IEnumerable<Person> GetPeople(int Age1,int Age2, int Age3)
+        {
+            var ages = new List <int>{Age1,Age2,Age3};
+            var query = _persons.Where(p => ages.Contains(p.Age));
+            return query;
+        }
+
         
-        public IEnumerable<Person> GetOrdered()
+
+        // Escribe un método que retorne la información ordenas por edad para las personas que sean mayores a 40 años
+        public IEnumerable<Person> GetOrdered(int age)
         {
-            var gender = 'F';
-            var query = _persons.Where(person => person.Gender == gender).OrderBy(person => person.Age);
+            var query = _persons.Where(p => p.Age > age).OrderBy(p => p.Age);
+            return query;
+        }
+        //Escribe un método que retorne la información ordenada de manera descendente para todas las personas de género masculino y que se encuentren entre los 20 y 30 años de edad
+        public IEnumerable<Person> GetOrderedDesc(char gender, int minAge, int maxAge)
+        {
+            var query = _persons.Where(p => p.Gender == gender && p.Age >= minAge && p.Age <= maxAge).OrderByDescending(p => p.Age);
             return query;
         }
 
-         public IEnumerable<Person> GetOrderedDesc()
+        // Escribe un método que retorne la cantidad de personas con género femenino.
+        public int GetCount(char gender)
         {
-            var gender = 'F';
-            var query = _persons.Where(person => person.Gender == gender).OrderByDescending(person => person.Age);
+            var query= _persons.Where(p => p.Gender == gender).Count();
+            return query;
+        }
+        //Escribe un método que retorna si existen personas con el apellido “Shemelt”.
+        public bool GetExist(string LastName)
+        {
+            var query= _persons.Exists(p=> p.LastName == LastName);
             return query;
         }
 
-
-        // Ordenar por más de una columna
-        public IEnumerable<Person> GetOrderedby2()
+        //Escribe un método que retorne únicamente una persona cuyo trabajo sea “Software Consultant” y tenga 25 años de edad
+        public Person JobAge(string job, int age)
         {
-            var query = _persons.OrderBy(person => person.Age).ThenBy(person => person.Job);
+            var query= _persons.Single(p=>p.Job == job && p.Age == age);
+            return query;
+        }   
+        //Escribe un método que retorne la información de las primeras 3 personas cuyo puesto de trabajo sea “Software Consultant”
+        public IEnumerable<Person>GetTake(string job, int Take)
+        {
+            var query= _persons.Where(p=>p.Job==job).Take(Take);
             return query;
         }
 
-        public IEnumerable<Person> GetOrderMultiColumns()
+        //Escribe un método que omita la información de las primeras 3 personas cuyo puesto de trabajo sea “Software Consultant”
+        public IEnumerable<Person> GetSkip(int skip,string job)
         {
-            var minAge =20;
-            var maxAge=20;
-            var job = "Analyst Programmer";
+        var query= _persons.Where(p=> p.Job==job).Skip(skip);
+        return query;
+        }
 
-            var query = _persons.Where(p => p.Age >= minAge && p.Age <= maxAge && p.Job == job ).OrderBy(p => p.Age).ThenBy(p => p.Id);
+        //Escribe un método que omita la información de las primeras 3 personas y que retorne la información de las siguientes 3 personas cuyo puesto de trabajo sea “Software Consultant”
+        public IEnumerable<Person> GetSkipTake(int skip, int take, string job)
+        {
+            var query= _persons.Where(p=>p.Job == job).Skip(skip).Take(take);
             return query;
         }
 
-        // retorno cantidad de elementos
-        
-        public int GetCount()
-        {
-            var job = "Software Consultant";
-            var query= _persons.Where(p => p.Job == job).Count();
-            return query;
-        }
-
-        // Evalua si un elemento existe
-        public bool GetExist()
-        {
-            var firstName = "Locke";
-            var query = _persons.Exists(person => person.FirstName == firstName);
-            return query;
-        }
-
-        public bool GetAny()
-        {
-            var lastName = "Benettolo";
-            var query = _persons.Any( person => person.LastName == lastName);
-            return query;
-        }
-
-        // retornar solo un elemento
-        
-        public Person GetByid2()
-        {
-            //var generador = new Random(DateTime.Now.Millisecond);
-           // var id = generador.Next(1000);
-           //var id = 796;
-           var job = "Legal Assistant";
-            
-            //var query = _persons.Single(p => p.Job == job);
-            var query = _persons.First(p => p.Job == job);
-            return query;
-        }
-
-
-        // retornar solamente unos elementos
-        
-        public IEnumerable<Person> GetTake()
-        {
-           var job = "Professor";
-           var take = 3;
-           var query = _persons.Where( p => p.Job == job).Take(take);
-           return query; 
-        }
-
-        // retornar elementos saltando posición
-        
     }
 }
