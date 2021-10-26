@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fixJ1BKeKV8VyifW1rh8yDM6ln41Y6wmHslhVDdkhK3PQa7ngNbfHXy+vktXrDIKM3Xn9j2v3c4AJAUpyrz8LQ==",
+  "dgSpecHash": "3KkNezamhrS70PRH/bd7iD/fnkExutE2kbYhvH2kCVp0W6yUkL3lDFfhRfSvQWiZpQcbBkNRdApEOqhbe1v6VA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\QueryApi\\QueryApi.csproj",
+  "projectFilePath": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\Practica2\\AlcoholismoApp\\AlcoholismoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Balam\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Balam\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -6,5 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
-build_property.RootNamespace = QueryApi
-build_property.ProjectDir = c:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\QueryApi\
+build_property.RootNamespace = AlcoholismoApp
+build_property.ProjectDir = C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\

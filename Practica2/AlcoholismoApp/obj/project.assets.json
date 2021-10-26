@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\QueryApi\\QueryApi.csproj",
-      "projectName": "QueryApi",
-      "projectPath": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\QueryApi\\QueryApi.csproj",
+      "projectUniqueName": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\Practica2\\AlcoholismoApp\\AlcoholismoApp.csproj",
+      "projectName": "AlcoholismoApp",
+      "projectPath": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\Practica2\\AlcoholismoApp\\AlcoholismoApp.csproj",
       "packagesPath": "C:\\Users\\Balam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\QueryApi\\obj\\",
+      "outputPath": "C:\\Users\\Balam\\Documents\\GitHub\\PracticasAplicacionesWeb\\Practica2\\AlcoholismoApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
