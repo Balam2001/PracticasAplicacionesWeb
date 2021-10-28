@@ -135,7 +135,7 @@ namespace ResistenciaApp.Infraestructure
                     return "El color indicado en la banda 4 no es valido";
             }
 
-            return " El valor de la resisencia es: " + Equivalencia + "Ω y su tolerancia es de: " + tolerancia;
+            return " El valor de la resisencia es: " + Equivalencia + " Ω y su tolerancia es de: " + tolerancia;
         }
     }
     }

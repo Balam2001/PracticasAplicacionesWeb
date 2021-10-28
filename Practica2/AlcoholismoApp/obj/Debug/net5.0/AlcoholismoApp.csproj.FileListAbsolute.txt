@@ -22,7 +22,6 @@ C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoAp
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\staticwebassets\AlcoholismoApp.StaticWebAssets.xml
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\scopedcss\bundle\AlcoholismoApp.styles.css
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\AlcoholismoApp.RazorTargetAssemblyInfo.cache
-C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\AlcoholismoApp.csproj.CopyComplete
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\AlcoholismoApp.dll
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\ref\AlcoholismoApp.dll
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\AlcoholismoApp\obj\Debug\net5.0\AlcoholismoApp.pdb

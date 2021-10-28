@@ -22,7 +22,6 @@ C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaAp
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\staticwebassets\ResistenciaApp.StaticWebAssets.xml
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\scopedcss\bundle\ResistenciaApp.styles.css
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\ResistenciaApp.RazorTargetAssemblyInfo.cache
-C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\ResistenciaApp.csproj.CopyComplete
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\ResistenciaApp.dll
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\ref\ResistenciaApp.dll
 C:\Users\Balam\Documents\GitHub\PracticasAplicacionesWeb\Practica2\ResistenciaApp\obj\Debug\net5.0\ResistenciaApp.pdb

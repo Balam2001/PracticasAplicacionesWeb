@@ -19,7 +19,7 @@ Christian Jesus Balam Rosas
 Parcial 2
 */
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("{Banda_1}/{Banda_2}/{Banda_3}/{Banda_4}")]
     public class ResistenciaController : ControllerBase
     {
         [HttpGet]

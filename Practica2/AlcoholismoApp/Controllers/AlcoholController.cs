@@ -19,7 +19,7 @@ Christian Jesus Balam Rosas
 4°C
 Parcial 2
 */
-    [Route("api/[controller]")]
+    [Route("{bebida}/{cantidad}/{peso}")]
     [ApiController]
     public class AlcoholController : ControllerBase
     {
