@@ -19,10 +19,11 @@ Christian Jesus Balam Rosas
 Parcial 2
 */
     [ApiController]
-    [Route("{Banda_1}/{Banda_2}/{Banda_3}/{Banda_4}")]
+    [Route("api/[controller]")]
     public class ResistenciaController : ControllerBase
     {
         [HttpGet]
+        [Route("{Banda_1}/{Banda_2}/{Banda_3}/{Banda_4}")]
         public string CalcularResistencia (string Banda_1, string Banda_2, string Banda_3, string Banda_4)
         {
             var repository = new ResistenciaRepository();

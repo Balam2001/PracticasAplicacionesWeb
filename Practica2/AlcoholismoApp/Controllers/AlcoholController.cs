@@ -19,11 +19,12 @@ Christian Jesus Balam Rosas
 4°C
 Parcial 2
 */
-    [Route("{bebida}/{cantidad}/{peso}")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AlcoholController : ControllerBase
     {
         [HttpGet]
+        [Route("{bebida}/{cantidad}/{peso}")]
         public string GetAlchohol(string bebida, int cantidad, double peso)
         {
             var repository = new AlcoholRepository();
