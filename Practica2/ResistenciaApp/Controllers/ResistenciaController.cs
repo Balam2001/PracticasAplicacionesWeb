@@ -7,6 +7,17 @@ using ResistenciaApp.Infraestructure;
 
 namespace ResistenciaApp.Controllers
 {
+
+/*
+Universidad Tecnologica Metropolitana
+Aplicaciones Web Orientadas a Objetos
+Joel Ivan Chuc Uc
+Practica 2 CalcularResistencia
+Christian Jesus Balam Rosas
+4to Cuatrimestre
+4°C
+Parcial 2
+*/
     [ApiController]
     [Route("api/[controller]")]
     public class ResistenciaController : ControllerBase

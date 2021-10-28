@@ -9,6 +9,16 @@ using AlcoholismoApp.Infraestructure;
 
 namespace AlcoholismoApp.Controllers
 {
+    /*
+Universidad Tecnologica Metropolitana
+Aplicaciones Web Orientadas a Objetos
+Joel Ivan Chuc Uc
+Practica 2 Alcoholismo
+Christian Jesus Balam Rosas
+4to Cuatrimestre
+4°C
+Parcial 2
+*/
     [Route("api/[controller]")]
     [ApiController]
     public class AlcoholController : ControllerBase
