@@ -46,7 +46,9 @@ namespace AlcoholismoApp.Infraestructure
                     grados_alcohol = 38;
                     break;
                 default:
-                    return 50;
+                    ml =1;
+                    grados_alcohol =1;
+                    break;
             }
 
             //Calcular el total de alcohol consumido
@@ -59,12 +61,23 @@ namespace AlcoholismoApp.Infraestructure
             MasaEtan = (0.789) * AlcoholDirec;
 
             //Volumen en la sangre considerando su peso
-            VolumenSang = (.08) * peso;
+            if(ml == 1)
+            {
+                peso = 1;
+                VolumenSang = (.08) * peso;
+
+            }
+            else
+            {
+                 VolumenSang = (.08) * peso;
+            }
 
             //Alcohol en la sangre
             AlcoholSangre = MasaEtan / VolumenSang;
 
             return AlcoholSangre;
         }
+
+    
     }
 }

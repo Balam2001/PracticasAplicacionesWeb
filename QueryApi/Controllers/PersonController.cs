@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using Microsoft.AspNetCore.Mvc;
 using QueryApi.Repositories;
-using QueryApi.Domain;
+using QueryApi.Domain.Entities;
+using QueryApi.Domain.Dtos;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Controllers
 {
@@ -142,6 +146,49 @@ namespace Controllers
             var repository = new PersonRepository();
             var persons = repository.GetSkipTake(skip,take,job);
             return Ok(persons);
+        }
+
+        [HttpGet]
+        [Route("Find")]
+        public IActionResult GetByFilter([FromBody]PersonRequest person)
+        {
+            var repository = new PersonRepository();
+            var persona = CreateObjectFromDto(person);
+            var personas = repository.GetByFilter(persona);
+            var respuesta = CreateDtoFromObject(personas);
+
+            return Ok(respuesta);
+        }
+
+        private IEnumerable<PersonResponse> CreateDtoFromObject(IEnumerable<Person> personas)
+        {
+            var dtos = personas.Select(x => new PersonResponse(
+                Name : $"{x.FirstName} {x.LastName}",
+                Email : x.Email,
+                ZipCode : x?.Address.City
+            ));
+            return dtos;
+        }
+
+        public Person CreateObjectFromDto(PersonRequest dto)
+        {
+            var persona = new Person(
+                Id : 0,
+                FirstName : string.Empty,
+                LastName : string.Empty,
+                Email : string.Empty,
+                Gender : dto.Gender,
+                Job : string.Empty,
+                Age : dto.Age,
+                Address : new Address(
+                    Street : string.Empty,
+                    Number : string.Empty,
+                    ZipCode : string.Empty,
+                    City : dto.City
+
+                )
+            );
+            return persona;
         }
     }
 }

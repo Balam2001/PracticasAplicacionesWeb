@@ -29,13 +29,14 @@ Parcial 2
         {
             var repository = new AlcoholRepository();
             double BAC = repository.Calculo(bebida, cantidad, peso);
+            
             if (BAC <= 0.8)
             {
-                return Math.Round(BAC,3) + " Tenga un buen viaje";
+                return "Tenga un buen viaje";
             }
             else
             {
-                return Math.Round(BAC, 3) + " Necesita apoyo";
+                return "Necesita apoyo";
             }
         }
     }

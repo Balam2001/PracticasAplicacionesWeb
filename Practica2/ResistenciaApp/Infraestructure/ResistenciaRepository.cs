@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 
 namespace ResistenciaApp.Infraestructure
 {
-  
         public class ResistenciaRepository
     {
         public string Calcular_Resistencia(string Banda_1, string Banda_2, string Banda_3, string Banda_4)

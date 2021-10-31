@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.IO;
-using QueryApi.Domain;
+using QueryApi.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace QueryApi.Repositories
@@ -135,6 +135,29 @@ namespace QueryApi.Repositories
         public IEnumerable<Person> GetSkipTake(int skip, int take, string job)
         {
             var query= _persons.Where(p=>p.Job == job).Skip(skip).Take(take);
+            return query;
+        }
+
+
+        public IEnumerable<Person> GetByFilter(Person person)
+        {
+            var query = _persons.Select( x => x);
+            if(!string.IsNullOrEmpty(person.FirstName))
+                query = query.Where(x => x.FirstName.Contains(person.FirstName));
+            
+            if(person.Age > 0)
+                query = query.Where(x => x.Age == person.Age);
+            
+            if(!string.IsNullOrEmpty(person.Job))
+                query = query.Where(x => x.Job == person.Job);
+            
+            if(person.Gender != null)
+                query =  query.Where(x => x.Gender == person.Gender);
+
+            
+            if (person.Address != null && !string.IsNullOrEmpty(person.Address.City))
+                query = query.Where(x => x.Address.City == person.Address.City);
+            
             return query;
         }
 
