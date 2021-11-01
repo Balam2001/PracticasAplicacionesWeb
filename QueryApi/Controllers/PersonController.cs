@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
 using Microsoft.AspNetCore.Mvc;
-using QueryApi.Repositories;
 using QueryApi.Domain.Entities;
 using QueryApi.Domain.Dtos;
 using System.Collections.Generic;
 using System.Linq;
+using QueryApi.Infraestructure.Repositories;
 
 namespace Controllers
 {
@@ -67,14 +65,14 @@ namespace Controllers
             return Ok(persons);
         } 
 
-        [HttpGet]
+        /*[HttpGet]
         [Route("GetPeople")]
         public IActionResult GetPeople(int Age1,int Age2,int Age3)
         {
             var repository = new PersonRepository();
             var persons = repository.GetPeople(Age1,Age2,Age3);
             return Ok(persons);
-        }
+        }*/
         
         [HttpGet]
         [Route("GetOrdered")]
@@ -172,22 +170,22 @@ namespace Controllers
 
         public Person CreateObjectFromDto(PersonRequest dto)
         {
-            var persona = new Person(
-                Id : 0,
-                FirstName : string.Empty,
-                LastName : string.Empty,
-                Email : string.Empty,
-                Gender : dto.Gender,
-                Job : string.Empty,
-                Age : dto.Age,
-                Address : new Address(
-                    Street : string.Empty,
-                    Number : string.Empty,
-                    ZipCode : string.Empty,
-                    City : dto.City
+            var persona = new Person{
+                Id = 0,
+                FirstName = string.Empty,
+                LastName = string.Empty,
+                Email = string.Empty,
+                Gender = dto.Gender.Value,
+                Job = string.Empty,
+                Age = dto.Age,
+                Address = new Address{
+                    Street = string.Empty,
+                    Number = string.Empty,
+                    ZipCode = string.Empty,
+                    City = dto.City
 
-                )
-            );
+            }
+            };
             return persona;
         }
     }

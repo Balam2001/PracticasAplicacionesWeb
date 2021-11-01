@@ -13,7 +13,7 @@ using System.IO;
 using QueryApi.Domain.Entities;
 using System.Threading.Tasks;
 
-namespace QueryApi.Repositories
+namespace QueryApi.Infraestructure.Repositories
 {
     public class PersonRepository
     {
@@ -42,7 +42,7 @@ namespace QueryApi.Repositories
         {
             var query =_persons.Select(person => new{
                 NombreCompleto = $"{person.FirstName} {person.LastName}",
-                AnioNacimiento= DateTime.Now.AddYears((person.Age * -1)).Year,
+                AnioNacimiento= DateTime.Now.AddYears((person.Age.Value * -1)).Year,
                 Correo = person.Email
             });
             return query;
@@ -76,12 +76,12 @@ namespace QueryApi.Repositories
         }
 
         //Escribe un método que retorna la información de las personas cuyas edades sean 25, 35 y 45 años
-        public IEnumerable<Person> GetPeople(int Age1,int Age2, int Age3)
+        /*public IEnumerable<Person> GetPeople(int Age1,int Age2, int Age3)
         {
             var ages = new List <int>{Age1,Age2,Age3};
-            var query = _persons.Where(p => ages.Contains(p.Age));
+            var query = _persons.Where(p => ages.Contains(p.Age.v));
             return query;
-        }
+        }*/
 
         
 
