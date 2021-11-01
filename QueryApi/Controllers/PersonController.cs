@@ -153,18 +153,18 @@ namespace Controllers
             var repository = new PersonRepository();
             var persona = CreateObjectFromDto(person);
             var personas = repository.GetByFilter(persona);
-            var respuesta = CreateDtoFromObject(personas);
+            var respuesta = personas.Select( x => CreateDtoFromObject(x));
 
             return Ok(respuesta);
         }
 
-        private IEnumerable<PersonResponse> CreateDtoFromObject(IEnumerable<Person> personas)
+        private PersonResponse CreateDtoFromObject( Person persona)
         {
-            var dtos = personas.Select(x => new PersonResponse(
-                Name : $"{x.FirstName} {x.LastName}",
-                Email : x.Email,
-                ZipCode : x?.Address.City
-            ));
+            var dtos = new PersonResponse(
+                Name : $"{persona.FirstName} {persona.LastName}",
+                Email : persona.Email,
+                ZipCode : persona == null ? string.Empty : persona.Address.City
+            );
             return dtos;
         }
 
